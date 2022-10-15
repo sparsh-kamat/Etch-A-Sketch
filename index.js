@@ -54,49 +54,58 @@ reset.addEventListener("click", function () {
   createGrid(gridSize, gridSize);
 });
 
-//change color on mouseover
+let mouseDown = false
+document.body.onmousedown = () => (mouseDown = true)
+document.body.onmouseup = () => (mouseDown = false)
+
+//black pen
 black.addEventListener("click", function () {
-  const cells = document.querySelectorAll(".grid-item");
-
-  cells.forEach((cell) => {
-    cell.addEventListener("mouseover", function () {
-      cell.style.backgroundColor = "black";
+    const gridItems = document.querySelectorAll(".grid-item");
+    gridItems.forEach((gridItem) => {
+        gridItem.addEventListener("mouseover", function () {
+        if (mouseDown) {
+            gridItem.style.backgroundColor = "black";
+        }
+        });
     });
-  });
-});
+    });
 
-//change color on mouseover
+//eraser
 eraser.addEventListener("click", function () {
-  const cells = document.querySelectorAll(".grid-item");
-
-  cells.forEach((cell) => {
-    cell.addEventListener("mouseover", function () {
-      cell.style.backgroundColor = "white";
+    const gridItems = document.querySelectorAll(".grid-item");
+    gridItems.forEach((gridItem) => {
+        gridItem.addEventListener("mouseover", function () {
+        if (mouseDown) {
+            gridItem.style.backgroundColor = "white";
+        }
+        });
     });
-  });
-});
+    }
+);
 
-//change color on mouseover
+//rainbow pen
 rainbow.addEventListener("click", function () {
-  const cells = document.querySelectorAll(".grid-item");
-
-  cells.forEach((cell) => {
-    cell.addEventListener("mouseover", function () {
-      cell.style.backgroundColor = `rgb(${Math.floor(
-        Math.random() * 255
-      )},${Math.floor(Math.random() * 255)},${Math.floor(
-        Math.random() * 255
-      )})`;
+    const gridItems = document.querySelectorAll(".grid-item");
+    gridItems.forEach((gridItem) => {
+        gridItem.addEventListener("mouseover", function () {
+        if (mouseDown) {
+            gridItem.style.backgroundColor =
+            "#" + Math.floor(Math.random() * 16777215).toString(16);
+        }
+        });
     });
-  });
-});
+    }
+);
 
-//clear grid on button click
+//clear grid
 clear.addEventListener("click", function () {
-    const cells = document.querySelectorAll(".grid-item");
+    const gridItems = document.querySelectorAll(".grid-item");
+    gridItems.forEach((gridItem) => {
+        gridItem.style.backgroundColor = "white";
+    });
+    }
+);
+
+
     
-    cells.forEach((cell) => {
-        cell.style.backgroundColor = "white";
-    });
-    });
 

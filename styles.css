@@ -1,5 +1,5 @@
 :defined{
---color1: #fac650;
+--color1: #362b10;
 --color2: #fac650;
 --color3: #000000;
 }
@@ -69,7 +69,7 @@ justify-content: center;
 
 
 button {
-    background: #f15412;
+    background: #c0a03e;
     border: none;
     color: white;
     padding: 15px 32px;
