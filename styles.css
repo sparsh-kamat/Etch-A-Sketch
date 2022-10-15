@@ -1,0 +1,82 @@
+:defined{
+--color1: #fac650;
+--color2: #fac650;
+--color3: #000000;
+}
+
+body{
+background-color: var(--color3);
+display: flex;
+justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+    align-items: center;
+    min-width: 80%;
+    min-height: 80%;
+    height: 100%;
+
+    
+}
+
+.controls {
+    display: flex;
+    width: auto;
+    border: 10px solid var(--color1);
+    background-color: var(--color1);
+}
+
+#buttonbackdrop
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 0px;
+    background-color: var(--color1);
+}
+
+
+#grid{
+    display: grid;
+    background: rgb(239, 228, 228);
+    margin: 0px;
+    padding: 0%;
+    
+    /* grid should never havea gap */
+    grid-gap: 0px;
+    border: 10px solid var(--color2);
+    background-color: var(--color2);
+    
+}
+
+
+.grid-item
+{
+    background: white;
+    border: 0.5px solid black;
+    margin: 0px;
+    padding: 0%;
+    height: auto;
+    width: auto;
+
+
+}
+
+
+
+button {
+    background: #f15412;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
